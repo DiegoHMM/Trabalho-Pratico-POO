@@ -17,6 +17,7 @@
 vector<Vagas> retorna_Empresa_e_suas_vagas(string empresa_procurada,vector<Vagas> vetor_de_vagas);
 vector<Vagas> vagas_com_Skill(string skill_procurada,vector<Vagas> vetor_de_vagas);
 vector<Vagas> lerVagas();
+vector<Desempregado> lerDesempregado();
 
 
 

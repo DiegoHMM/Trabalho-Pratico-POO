@@ -64,6 +64,49 @@ vector<Vagas> lerVagas()
     }
     return vetor_de_vagas;
 }
+/**********************************
+ *   FUNCAO DE LER DESEMPREGADO   *
+ * ********************************/
+vector<Desempregado> lerDesempregado()
+{
+    int tempo;
+    string skill;
+    vector<string> vetor_de_skill;
+    int idade;
+    string nome;
+
+    vector<Desempregado> vetor_de_desempregado;
+
+    Desempregado desempregado_aux = Desempregado();
+    //abertura do arquivo Des.txt
+    ifstream arq_Desempregado("entradaDes.txt",ios::in);
+    while(!arq_Desempregado.eof())
+    { 
+        getline(arq_Desempregado,nome);
+        arq_Desempregado >> idade;
+        arq_Desempregado.ignore();
+        getline(arq_Desempregado,skill);
+        arq_Desempregado >> tempo;
+        //SEPARANDO SKILL
+        int i=0;
+        string word;//auxiliar para salvar os skillls separados
+		stringstream str(skill);
+        vector<string> vetor_de_skill;//tem que ficar aqui pra sempre ir criando uma lista estatica
+		while(str >> word){// separa os Skills
+            vetor_de_skill.push_back(word);
+            i++;
+        }
+        //alocar o desempregado e jogar dentro do vector
+        desempregado_aux.setNomePessoa(nome);
+        desempregado_aux.setIdadePessoa(idade);
+        desempregado_aux.setTempo(tempo);
+        desempregado_aux.setSkill(vetor_de_skill);
+        vetor_de_desempregado.push_back(desempregado_aux);
+        arq_Desempregado.ignore();
+    }
+    return vetor_de_desempregado;
+}
+
 /************************************************************
 *                    QUESTAO 3                              *
 *     mostra vagas por skill ordenados pelo id              *
