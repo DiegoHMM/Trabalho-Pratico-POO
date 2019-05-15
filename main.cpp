@@ -23,22 +23,19 @@ int main(){
     vector<Vagas> vetor_de_vagas;
     vector<Vagas> skill_ordenado_por_id;
     vector<Vagas> empresa_ordenado_por_id;
-    vetor_de_vagas = lerVagas();//copia do vetor pra main
+    vetor_de_vagas = lerVagas();//vetor de vagas pra main
     /***********************************
      *      VARIAVEIS DE DESEMPREGADO  *
      * *********************************/
     vector<Desempregado> vetor_de_desempregado;
 
 
-    vetor_de_desempregado = lerDesempregado();
-    vetor_de_desempregado[0].imprimeDesempregado();
+    vetor_de_desempregado = lerDesempregado();//vetor de desempregados para main
 
-
-
-    /************************************************************
-    *                    QUESTAO 3                              *
-    *     mostra vagas por skill ordenados pelo id              *
-    *************************************************************/
+    /****************************************************
+    *                    QUESTAO 3                      *
+    *     mostra vagas por skill ordenados pelo id      *
+    *****************************************************/
    /*
     skill_ordenado_por_id = vagas_com_Skill("poledancing",vetor_de_vagas);
     int tam_skill_ordenado;
